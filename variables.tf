@@ -38,6 +38,7 @@ variable "master_password" {
   description = "DB Master Password"
   type        = string
   default     = "SuperS3cret"
+  sensitive   = true
 }
 
 variable "master_username" {
@@ -78,6 +79,6 @@ variable "instance_class" {
 
 variable "replica_count" {
   description = "Nunmber of replicas inside the cluster"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
