@@ -21,7 +21,7 @@ resource "aws_rds_cluster" "db_cluster" {
 
 resource "aws_rds_cluster_instance" "db_instance" {
   count                = var.replica_count
-  identifier           = var.identifier
+  identifier           = "${var.identifier}-${count.index}"
   cluster_identifier   = aws_rds_cluster.db_cluster.id
   engine               = var.engine
   instance_class       = var.instance_class
