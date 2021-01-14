@@ -17,4 +17,5 @@ output "db_user" {
 
 output "db_pass" {
   value = aws_rds_cluster.db_cluster.master_password
+  sensitive = false
 }
